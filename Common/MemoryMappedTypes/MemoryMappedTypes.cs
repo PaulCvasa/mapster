@@ -117,9 +117,16 @@ public struct PropertyEntryList
 public struct MapFeature
 {
     // https://wiki.openstreetmap.org/wiki/Key:highway
-    public static string[] HighwayTypes =
+    public enum HighwayTypes
     {
-        "motorway", "trunk", "primary", "secondary", "tertiary", "unclassified", "residential", "road"
+        Motorway,
+        Trunk,
+        Primary, 
+        Secondary,
+        Tertiary,
+        Unclassified,
+        Residential,
+        Road
     };
 
     [FieldOffset(0)] public long Id;
@@ -129,4 +136,56 @@ public struct MapFeature
     [FieldOffset(17)] public int CoordinateCount;
     [FieldOffset(21)] public int PropertiesOffset;
     [FieldOffset(25)] public int PropertyCount;
+}
+
+public enum DrawableTerrainType : int //< Defined an enum in order to store the old strings of drawable terrain more efficiently
+{
+    Admin_level,
+    Amenity,
+    Highway,
+    Farm,
+    Place,
+    Natural,
+    Leisure,
+    Residential,
+    Reservoir,
+    Name,
+    Railway,
+    Building,
+    Water,
+    Landuse,
+    Boundary
+}
+
+public enum LandType
+{
+    Forest,
+    Orchard,
+    Residential,
+    Cemetery,
+    Industrial,
+    Commercial,
+    Square,
+    Construction,
+    Military,
+    Quarry,
+    Brownfield,
+    Farm,
+    Meadow,
+    Grass,
+    Greenfield,
+    Recreation_Ground,
+    Winter_Sports,
+    Allotments,
+    Reservoir,
+    Basin
+}
+
+
+public enum UrbanLand
+{
+    City,
+    Town,
+    Locality,
+    Hamlet
 }
